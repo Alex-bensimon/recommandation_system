@@ -183,17 +183,20 @@ for i in range(nb_page):
                                                 new_hotel = requests.get(new_hotel_link)
                                                 new_hotel_soup = BeautifulSoup(new_hotel.text, 'lxml')
                                                 
-                                                hotels_name.append(new_hotel_soup.find('h1', class_="_1mTlpMC3").text.replace('\n',"").strip())
-                                                hotels_link.append(new_hotel_link)
-                                                hotels_rate.append(new_hotel_soup.find('span', class_="_3cjYfwwQ").text)
-                                                hotels_location.append(new_hotel_soup.find('span', class_="_3ErVArsu jke2_wbp").text)
-                                                
-                                                new_hotel_id = randint(10000, 100000)
-                                                hotels_id.append(new_hotel_id)
-                                                id_hotel.append(new_hotel_id)
-                                                
-                                                print("comment nb : "+str(c_id))
-                                                c_id = c_id + 1
+                                                if new_hotel_soup != None:
+                                                    hotels_name.append(new_hotel_soup.find('h1', class_="_1mTlpMC3").text.replace('\n',"").strip())
+                                                    hotels_link.append(new_hotel_link)
+                                                    hotels_rate.append(new_hotel_soup.find('span', class_="_3cjYfwwQ").text)
+                                                    hotels_location.append(new_hotel_soup.find('span', class_="_3ErVArsu jke2_wbp").text)
+                                                    
+                                                    new_hotel_id = randint(10000, 100000)
+                                                    hotels_id.append(new_hotel_id)
+                                                    id_hotel.append(new_hotel_id)
+                                                    
+                                                    print("comment nb : "+str(c_id))
+                                                    c_id = c_id + 1
+                                                else:
+                                                    print("No new hotel")
                                         else:
                                             print("Div None")
                                     else:
