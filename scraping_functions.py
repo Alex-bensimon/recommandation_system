@@ -11,6 +11,7 @@ import pandas as pd
 from random import randint
 import time
 from time import sleep
+import re
 
 def hotels_tab_creation():
     hotels_name = []
@@ -51,12 +52,17 @@ def homepage_request(page,i=0):
     return home_soup
 
 
-def totor_function():
-    h_id = 100
-    return h_id
+def get_hotelid_from_URL(url):
+    cut_url = url[40:]
+    regex = r"(?<=[g,d])([0-9]*)(?=-)"
+    matchs = re.findall(regex, cut_url)
+    h_id = "".join(matchs)
+    return int(h_id)
 
-def totor_function2():
-    c_id = 100
+
+def get_cid_from_username_in_URL(url):
+    cut_url = url[35:]
+    c_id = hash(cut_url)
     return c_id
 
 
