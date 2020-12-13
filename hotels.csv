@@ -1,0 +1,486 @@
+;id;user_name;rate;title;hotel_id
+0;0;Elmiltch;5,0;Idéal pour visite de Paris en famille;0
+1;1;Elmiltch;5,0;Idéal pour visite de Paris en famille;54699
+2;2;Sarahe;5,0;Bon séjours;0
+3;3;Guillaume G;5,0;Rapport qualité/prix de folie, localisation idéale pour visiter Paris.;0
+4;4;Silva A;5,0;Séjour Hotel Malte Astotel Paris;0
+5;5;Silva A;5,0;Séjour Hotel Malte Astotel Paris;76700
+6;6;Marc W;5,0;Chouette hôtel;0
+7;7;Marc W;5,0;Chouette hôtel;34906
+8;8;Marc W;5,0;30 ans de mariage au Domaine de la Réserve : magique !;59148
+9;9;lionel-lacour;5,0;Très bon hôtel;1
+10;10;michelerochiccioli2;5,0;A conseiller +++;1
+11;11;thierryjulien2020;5,0;Très bien;1
+12;12;xk551;2,0;tres déçu pour ma deuxième venue chez vous.;1
+13;13;Julie C;5,0;Aux petits soins!;1
+14;14;Julie C;5,0;Aux petits soins!;86298
+15;15;Julie C;1,0;Charme et sourire !;60072
+16;16;Martinepierre14;5,0;Accueil très chaleureux dans un contexte difficile de confinement et d'attentats;2
+17;17;Martinepierre14;5,0;Accueil très chaleureux dans un contexte difficile de confinement et d'attentats;99301
+18;18;Martinepierre14;4,0;Très belle adresse pour visiter Lisbonne;32598
+19;19;Martinepierre14;4,0;Très agréable;27142
+20;20;Martinepierre14;5,0;Toujours une très belle adresse à Venise;41484
+21;21;Martinepierre14;5,0;Merveilleux endroit à 5 minutes à pied du port de Cancale;76709
+22;22;Martinepierre14;4,0;Un endroit parfait pour se balader dans Londres;83283
+23;23;Martinepierre14;5,0;exceptionnel;41800
+24;24;Martinepierre14;3,0;Froid;21842
+25;25;bozu2046;4,0;Très bon rapport qualité/ prix;2
+26;26;bozu2046;4,0;Très bon rapport qualité/ prix;45945
+27;27;bozu2046;5,0;Un hôte extraordinaire et un cadre merveilleux;13522
+28;28;bozu2046;3,0;Bien mais...;69266
+29;29;bozu2046;5,0;Excellent séjour;27497
+30;30;bozu2046;5,0;Séjour trop court !;37927
+31;31;bozu2046;4,0;Bon séjour en famille;42855
+32;32;bozu2046;4,0;Un très beau séjour en famille;24106
+33;33;eric2vdigpo1ml5lxh5g;5,0;Un bel endroit;2
+34;34;xav d;4,0;Voyage affaire;2
+35;35;xav d;4,0;Voyage affaire;37362
+36;36;xav d;5,0;3ème visite ;45798
+37;37;xav d;3,0;Bon rapport qualité prix ;44945
+38;38;xav d;5,0;Anniversaire de mariage ;93135
+39;39;xav d;3,0;Appartement simple type étudiant ;75221
+40;40;xav d;3,0;hotel bien placé mais sans grand intérêt;38449
+41;41;xav d;3,0;Encore un hôtel pharisien qui a besoin de rafraîchissement;11416
+42;42;Remyriam;5,0;Excellent sejour a l'hotel La Manufacture;2
+43;43;Remyriam;5,0;Excellent sejour a l'hotel La Manufacture;60256
+44;44;Remyriam;5,0;Excellent hotel and great service;81652
+45;45;Avi L;5,0;Une discrétion et un service d’exception ;3
+46;46;Avi L;5,0;Une discrétion et un service d’exception ;16822
+47;47;Amandine;5,0;Merveilleux hôtel je recommande 1000 fois !;3
+48;48;Amandine;5,0;Merveilleux hôtel je recommande 1000 fois !;55110
+49;49;enzo k;5,0;ALLEZ Y ! extra;3
+50;50;Jade;5,0;Séjour merveilleux ;3
+51;51;Rachou1810;5,0;Premier hôtel > LE TOOOPPP;3
+52;52;Rachou1810;5,0;Premier hôtel > LE TOOOPPP;47591
+53;53;peaceandlove;4,0;Décoration trés bien pensée;4
+54;54;peaceandlove;4,0;Décoration trés bien pensée;73509
+55;55;peaceandlove;4,0;Magnifique patio;70509
+56;56;peaceandlove;4,0;trés belle vue sur le lac;97112
+57;57;peaceandlove;4,0;Magnifique chambre;10587
+58;58;peaceandlove;2,0;Chambre d hote;23962
+59;59;Alex F;5,0;Magnifique hôtel;4
+60;60;bgliga738524;5,0;Voyage au top !;4
+61;61;Pauline D;5,0;Séjour parfait;4
+62;62;Alexandra L;5,0;Mon hotel préféré à Paris;4
+63;63;Alexandra L;5,0;Mon hotel préféré à Paris;35991
+64;64;hortenserigal;5,0;Superbe Hotel;5
+65;65;18laure;5,0;bravo à l'équipe de l'hôtel pour sa disponibilité et son sens de l'accueil;5
+66;66;Jeremy Barray;5,0;Excellent!;5
+67;67;Sandra F;5,0;Très bon hôtel;5
+68;68;Boucheron Joell... L;5,0;Séjour en famille ;5
+69;69;Boucheron Joell... L;4,0;Séjour parisien;69611
+70;70;Boucheron Joell... L;5,0;Séjour en famille ;82569
+71;71;Boucheron Joell... L;5,0;Week-end ;87860
+72;72;Boucheron Joell... L;1,0;Vacances janvier;52466
+73;73;Boucheron Joell... L;5,0;Vacances;49913
+74;74;DavidBeaufils;5,0;Superbe !!;6
+75;75;DavidBeaufils;5,0;Superbe !!;30703
+76;76;DavidBeaufils;5,0;Amazing stay !;57522
+77;77;DavidBeaufils;5,0;Amazing!;45205
+78;78;DavidBeaufils;5,0;Great hotel;78244
+79;79;Dubuc;5,0;Hotel plein de charme;6
+80;80;Lordbret007;1,0;2 Étoiles et je suis génereux;6
+81;81;Lordbret007;1,0;2 Étoiles et je suis génereux;50238
+82;82;Lordbret007;1,0;Déception;49525
+83;83;Lordbret007;5,0;Really nice sleep;43487
+84;84;Lordbret007;5,0;Perfecto!;84625
+85;85;Lordbret007;4,0;Great improvements;14087
+86;86;Lordbret007;5,0;Gran Meliá Colón : un palace en plein coeur de Séville;57088
+87;87;Lordbret007;5,0;Sleem like a baby;51791
+88;88;Lordbret007;1,0;"Un ""Château"" en ruine";89032
+89;89;Lordbret007;5,0;Comme à la Maison;70802
+90;90;Lordbret007;5,0;Un cocon d'amour;19496
+91;91;Lordbret007;1,0;Fuyez cet hôtel;15477
+92;92;Lordbret007;5,0;Excellent hôtel 5 étoiles;36734
+93;93;Lordbret007;5,0;HOTEL 4 ETOILES SUPÉRIEURES;51247
+94;94;Lordbret007;5,0;"Ça c'est ""El Palace""";50044
+95;95;Lordbret007;4,0;Panerai Yacht club- Park Hyatt Paris Vendeome;85566
+96;96;Lordbret007;5,0;Hotel loin du tumulte du centre-ville;58517
+97;97;Lordbret007;5,0;Luxe et raffinement au coeur de Paris;29475
+98;98;Lordbret007;4,0;Que de changement!;41137
+99;99;Maharahaje S;5,0; Un des meilleurs hôtels à Paris;6
+100;100;Maharahaje S;5,0; Un des meilleurs hôtels à Paris;85225
+101;101;claudine c;5,0;Soirée romantique;6
+102;102;claudine c;5,0;Soirée romantique;77549
+103;103;claudine c;4,0;Très bonnes vacances avec les copines;59094
+104;104;claudine c;5,0;le paradis sur terre;58792
+105;105;claudine c;5,0;3 girls;55125
+106;106;khadrayb;5,0;Accueil;7
+107;107;fredericroch;5,0;Avis excellent;7
+108;108;berengeremasson;5,0;Tres bon hotel pour une nuit avant de prendre le train;7
+109;109;emelinebaudet;3,0;Beaucoup de bruit;7
+110;110;Steph00957;5,0;Un bon petit hôtel, à deux pas de la gare de Lyon !;7
+111;111;Thomas N;5,0;Excellent;8
+112;112;fabienne d;5,0;Très bien ;8
+113;113;fabienne d;5,0;Très bien ;11220
+114;114;Jcc;5,0;Très très bonne adresse;8
+115;115;ijcg;5,0;Un séjour Idéal;8
+116;116;ijcg;5,0;Un séjour Idéal;91587
+117;117;ijcg;5,0;Excellent séjour.;58546
+118;118;ijcg;5,0;Excellente adresse à recommander à Montpellier;88495
+119;119;ijcg;5,0;Trés bon établissement à recommander.;53277
+120;120;ijcg;5,0;Super !!;12999
+121;121;Amin G;5,0;Incontournable ;8
+122;122;Amin G;5,0;Incontournable ;23002
+123;123;Amin G;5,0;Excellent hôtel et Excellent service !! ;84331
+124;124;Amin G;5,0;Excellent ;32894
+125;125;Christian B;4,0;Beau concept;9
+126;126;Bsevane;5,0;Emplacement idéal à 200m Gare de Lyon ;9
+127;127;Bsevane;5,0;Emplacement idéal à 200m Gare de Lyon ;41454
+128;128;Bsevane;5,0;Une petite Pépite proche de la Gare de Lyon...😎;76465
+129;129;Bsevane;5,0;O top ......😎;25276
+130;130;didiergr0sjean;3,0;Nuit du 20201116 DG;9
+131;131;M5030TBar;5,0;Cosy room from the future;9
+132;132;aureliebar2020;4,0;Très chouette;9
+133;133;HionaM;5,0;Superbe expérience;10
+134;134;sandrah78078;5,0;Séjour parfait ;10
+135;135;sandrah78078;5,0;Séjour parfait ;33993
+136;136;vincent l;2,0;Avis mitigé;10
+137;137;vincent l;2,0;Avis mitigé;64046
+138;138;vincent l;5,0;Excellentissime! Le lieu parfait;38840
+139;139;chabhas;5,0;Très bon hôtel !;10
+140;140;vdscarine;5,0;Parfait;10
+141;141;vdscarine;5,0;Parfait;16653
+142;142;vdscarine;4,0;Très propre;50964
+143;143;emelineg359;5,0;Toujours un plaisir de retrouver l'hôtel Darcet pour mes séjours parisiens;11
+144;144;emelineg359;5,0;Toujours un plaisir de retrouver l'hôtel Darcet pour mes séjours parisiens;39316
+145;145;emelineg359;5,0;Parfait, comme toujours!;97695
+146;146;emelineg359;5,0;Excellent rapport qualité/ prix, je reviendrai !;17043
+147;147;kevinel0die;5,0;Un véritable coup de coeur !;11
+148;148;Laeti T;5,0;Tres bon séjour ;11
+149;149;Ratafia R;5,0;Une perle dans Paris;11
+150;150;Ratafia R;5,0;Une perle dans Paris;67826
+151;151;argane;5,0;A découvrir...;11
+152;152;argane;5,0;Proche aéroport Orly...;59106
+153;153;argane;5,0;A découvrir...;47214
+154;154;lasourisverte;4,0;Décoration originale;12
+155;155;lasourisverte;4,0;Décoration originale;15921
+156;156;Amaury G;5,0;Agréable sejour;12
+157;157;Amaury G;5,0;Agréable sejour;31275
+158;158;Pomme21;5,0;Super Hôtel ;12
+159;159;Pomme21;5,0;Super Hôtel ;37713
+160;160;Pomme21;5,0;Magnifique hôtel ;19282
+161;161;Pomme21;1,0;Arnaque;56831
+162;162;Pomme21;5,0;Merveilleux séjour ;88997
+163;163;Marie Laure K;5,0;"Tres bien; tres bon rapport qualite prix";12
+164;164;Marie Laure K;5,0;"Tres bien; tres bon rapport qualite prix";74541
+165;165;Cindy H;4,0;Petit séjour parisien ;12
+166;166;Cindy H;4,0;Petit séjour parisien ;92679
+167;167;Cindy H;5,0;Escale sur la route des vacances;66802
+168;168;Cindy H;3,0;Bien placé;18268
+169;169;Cindy H;4,0;Proche des Marchés de Noël;49557
+170;170;Cindy H;4,0;Séjour juillet 2013;99051
+171;171;Cindy H;5,0;Vraiment très bien!!!;18894
+172;172;Cindy H;1,0;Lamentable,j'en ai pleuré!!!!;87534
+173;173;stephanenjonk;5,0;Séjour au top;13
+174;174;jerome75;4,0;emplacement intéressant;13
+175;175;amelie h;5,0;De passage;13
+176;176;amelie h;5,0;De passage;16787
+177;177;amelie h;5,0;Merveilleux accueil à l’hôtel pullman;16887
+178;178;Bzh.Farinthesky;5,0;Presque parfait ;13
+179;179;Bzh.Farinthesky;5,0;Presque parfait ;10241
+180;180;Bzh.Farinthesky;4,0;Top sauf la salle de bain;92656
+181;181;Bzh.Farinthesky;5,0;Superbe hôtel et hygiène ;42205
+182;182;Bzh.Farinthesky;1,0;Plus jamais ça !;47121
+183;183;Bzh.Farinthesky;5,0;Simplement Top !;51898
+184;184;Bzh.Farinthesky;4,0;Presque parfait ;13109
+185;185;Bzh.Farinthesky;5,0;Excellent rapport qualité prix;55212
+186;186;Bzh.Farinthesky;5,0;Superbe hôtel en plein centre;91329
+187;187;Fbi1353;3,0;décevant;13
+188;188;Fbi1353;3,0;décevant;96526
+189;189;Fbi1353;4,0;belle decouverte;35147
+190;190;Voyageur0064;5,0;Excellent ;14
+191;191;Voyageur0064;2,5;;85547
+192;192;Voyageur0064;1,0;Mauvais plan;70599
+193;193;Voyageur0064;1,0;Mauvais plan;23910
+194;194;Voyageur0064;4,0;Bon petit hotel bien agréable ;72797
+195;195;Voyageur0064;5,0;Moments de plaisir;73954
+196;196;Voyageur0064;4,0;Bon hotel a prix raisonnable ;90993
+197;197;Voyageur0064;3,0;Accueil à revoir;43333
+198;198;Voyageur0064;5,0;Belle ambiance;50900
+199;199;Voyageur0064;5,0;Un petit hôtel bien agréable ;92026
+200;200;Voyageur0064;5,0;Excellent ;66874
+201;201;Voyageur0064;1,0;Une hygiène inquiétante ;22543
+202;202;Vince;5,0;Satisfait ;14
+203;203;J R;4,0;Bonne situation, tarifs attractifs, chambre propre et bien aménagée;14
+204;204;Damdam75;4,0;Bonne adresse proche Montparnasse ;14
+205;205;Damdam75;4,0;Bonne adresse proche Montparnasse ;29574
+206;206;Damdam75;5,0;Excellent;29816
+207;207;Damdam75;3,0;De plus et des moins;38876
+208;208;Damdam75;3,0;Bon rapport qualité prix;63769
+209;209;Damdam75;5,0;Irréprochable ;39399
+210;210;Damdam75;5,0;Très bien sous tout rapport ;10831
+211;211;Damdam75;5,0;Très bien ;90913
+212;212;Olivier V;4,0;Bien pour un séjour court en correspondance. Sans plus.;14
+213;213;Olivier V;4,0;Hôtel purement fonctionnel, situé en face la gare. Neuf, propre, mais sans charme.;77247
+214;214;Olivier V;4,0;Bien pour un séjour court en correspondance. Sans plus.;64556
+215;215;Olivier V;4,0;Très bon rapport qualité prix. Chambre confortable et lumineuse.;62876
+216;216;Olivier V;5,0;Hôtel situé au bord du lac. Chaleureux, calme et confortable. On s'y sent chez soi.;29929
+217;217;Olivier V;4,0;Formule Sleep Park and Stay intéressante;72596
+218;218;Olivier V;5,0;Une véritable oasis de détente en plein désert, restaurants, bars, piscines, mer, tout est là.;65801
+219;219;Pascal C;5,0;Séjour parfait à Paris;15
+220;220;Pascal C;5,0;Séjour parfait à Paris;33692
+221;221;Pascal C;5,0;Très belle semaine à la mer;64814
+222;222;Pascal C;5,0;Semaine inoubliable en Martinique;92258
+223;223;Pascal C;3,0;Belle semaine en Martinique;26755
+224;224;Pascal C;4,0;Très bon rapport qualité prix au centre de Megève;64182
+225;225;Bernard M;5,0;Les Jardins de Mademoiselle…  un havre de paix au coeur du 15ème !;15
+226;226;Bernard M;3,0;Najeti Hôtel Château Cléry…  un réel besoin d'un sérieux coup de jeunesse !;69868
+227;227;Isa;5,0;Très bonne adresse;15
+228;228;Eloïse MB;5,0;Un moment exceptionnel;15
+229;229;Eloïse MB;5,0;Un moment exceptionnel;14062
+230;230;Eloïse MB;5,0;Week-end au top;50403
+231;231;Bambinours;5,0;Excellent rapport qualité-prix;15
+232;232;Bambinours;5,0;Excellent rapport qualité-prix;51349
+233;233;471C_R;5,0;Excellent séjour ;16
+234;234;471C_R;5,0;Excellent séjour ;95135
+235;235;Fabienne H;5,0;Séjour parisien ;16
+236;236;Fabienne H;4,0;;71855
+237;237;Fabienne H;5,0;Séjour parisien ;89351
+238;238;Fabienne H;3,0;Hotel 2 étoiles ;68843
+239;239;Fabienne H;4,0;Hôtel charmant très bien situé ;89091
+240;240;Fabienne H;4,0;Bien situé ;95754
+241;241;Fabienne H;5,0;Hôtel rue des mathurins ;47501
+242;242;Florian;4,0;Agréable Séjour;16
+243;243;Florian;4,0;Agréable Séjour;88211
+244;244;moi20cent;4,0;Très bien ;16
+245;245;moi20cent;4,0;Très bien ;23855
+246;246;moi20cent;5,0;Magnifique <3;52455
+247;247;Séverine G;4,0;Une valeur sûre très bien  située ;16
+248;248;Séverine G;4,0;Pas un charme fou mais tout y est;54404
+249;249;Séverine G;4,0;Adresse idéale pour manger sain;61234
+250;250;Séverine G;4,0;Une valeur sûre très bien  située ;84681
+251;251;Séverine G;4,0;Déjeuner divin;56382
+252;252;Séverine G;4,0;Un camping simple dans un cadre magnifique;87714
+253;253;Séverine G;4,0;Chouette camping nature et calme;25102
+254;254;Séverine G;4,0;Camping agréable,  bien situé aux portes des alpilles;81090
+255;255;Séverine G;4,0;Agréable camping de montagne bercé par la rivière ;76167
+256;256;Séverine G;4,0;Week-end déconnexion face aux montagnes;84622
+257;257;Séverine G;4,0;Un petit paradis de camping;67054
+258;258;Séverine G;4,0;Un de mes campings préférés;41502
+259;259;Séverine G;4,0;Rapport qualité prix intéressant,  calme;33605
+260;260;Séverine G;3,0;Bien placé mais être bien conscient que c'est très basique en Termes de prestation;47674
+261;261;Gabriellgaby;4,0;petit hotel sympa;17
+262;262;Valerieval5962;5,0;Super;17
+263;263;Valerieval5962;5,0;Super;97614
+264;264;Valerieval5962;1,0;N y aller surtout pas - beurk -;66942
+265;265;Valerieval5962;5,0;Camping très calme;75045
+266;266;Corinneb6971;5,0;Hôtel vivement conseillé;17
+267;267;louisjubin;5,0;Fidèle à l'hôtel Interlude;17
+268;268;yannicktolle;4,0;Très bon hôtel. Bien placé;17
+269;269;yannicktolle;4,0;Très bon hôtel. Bien placé;91114
+270;270;milpiedjb;4,0;Très bien mais chambre mal insonorisé;18
+271;271;sarahporsan;3,0;Un hôtel moyen;18
+272;272;galipol;4,0;Hôtel accueillant et un personnel attentionné;18
+273;273;cecilepaoletti2a;3,0;Bon rapport qualité prix;18
+274;274;Raf-meliss-lylou;4,0;Bien situé ;18
+275;275;Raf-meliss-lylou;4,0;Bien situé ;49635
+276;276;Raf-meliss-lylou;4,0;Très bien;83677
+277;277;ladams441778;1,0;Fuyez...très sale, et pas désinfecté;19
+278;278;christinebouchard1;5,0;Hôtel chaleureux;19
+279;279;Corine51;5,0;Très bien;19
+280;280;Corine51;5,0;Très bien;92865
+281;281;Corine51;5,0;Sejour agreable;69430
+282;282;Corine51;5,0;Accueil et qualité excellents;72760
+283;283;RSR31400;5,0;Rien à redire;19
+284;284;julienduvar;5,0;Belle surprise;19
+285;285;julienduvar;5,0;Belle surprise;86058
+286;286;julienduvar;3,0;Vraiment moyen;15518
+287;287;julienduvar;4,0;Très bien;55495
+288;288;julienduvar;4,0;Bon rapport qualité prix;26347
+289;289;julienduvar;3,0;Correct dans l'ensemble;54460
+290;290;julienduvar;4,0;Très bien;32694
+291;291;Ibrahima Nour E... D;5,0;A perfect localisation, very nice staff and a lovely boutique hotel;20
+292;292;Ibrahima Nour E... D;5,0;A perfect localisation, very nice staff and a lovely boutique hotel;23132
+293;293;Ibrahima Nour E... D;5,0;A perfect localisation, very nice staff and a lovely boutique hotel;28759
+294;294;Ibrahima Nour E... D;5,0;Jumeirha ethiad tower, unchanged quality;98238
+295;295;Ibrahima Nour E... D;5,0;Exceptionnal place for vacation and business ;85005
+296;296;Ibrahima Nour E... D;5,0;Très bon hotel;23493
+297;297;Ibrahima Nour E... D;4,0;Perfect stop over hotel in dubai;15204
+298;298;eurla2f;5,0;Parfait;20
+299;299;annieleb2020;3,0;pour dormir sans déjeuner;20
+300;300;Lyonnaise;5,0;Séjour inoubliable!!;20
+301;301;Lyonnaise;5,0;Séjour inoubliable!!;38700
+302;302;Lyonnaise;4,0;Beau 4*. Idéalement situé ;37740
+303;303;abimen;5,0;Anniversaire de mariage;20
+304;304;587christophe;5,0;Bon courage;21
+305;305;587christophe;5,0;Bon courage;61521
+306;306;587christophe;4,0;Un havre de paix;61443
+307;307;587christophe;4,0;Idéal;44389
+308;308;Emeline H;4,0;Peu mieux faire ;21
+309;309;Emeline H;4,0;Peu mieux faire ;50416
+310;310;Emeline H;5,0;Exceptionnel ;85987
+311;311;Emeline H;5,0;A voir ;62748
+312;312;Emeline H;5,0;Bel endroit ;29510
+313;313;Sacq;4,0;Très bonne nuit;21
+314;314;Sacq;4,0;Top;70992
+315;315;Sacq;5,0;Formidable;70419
+316;316;Sacq;4,0;Très bonne nuit;16528
+317;317;Sacq;4,0;Confortable;53279
+318;318;Sacq;3,0;pas cher;63930
+319;319;Sacq;4,0;restaurant;56372
+320;320;Sacq;4,0;vacances super;33524
+321;321;Sacq;4,0;super semaine;89068
+322;322;Maur;4,0;Bel hôtel;21
+323;323;Maur;4,0;Bel hôtel;82694
+324;324;Maur;3,0;Dommage;77160
+325;325;Maur;4,0;Bel hôtel;88741
+326;326;Maur;4,0;Bel hôtel;17170
+327;327;Maur;4,0;Bel hôtel;54062
+328;328;Maur;2,0;La propreté;17818
+329;329;Maur;3,0;Bien sans plus.;28539
+330;330;Maur;5,0;Magnifique;73067
+331;331;Maur;4,0;Belle découverte;37005
+332;332;Maur;1,0;Il y a des limites!;49510
+333;333;Maur;4,0;Proximité de Troyes;18680
+334;334;Vernon H;5,0;Remerciements;21
+335;335;Ila1511;5,0;Excellent;22
+336;336;Ila1511;5,0;Excellent;51724
+337;337;Ila1511;5,0;Belle expérience;23344
+338;338;Ila1511;5,0;Che luogo incantevole;61770
+339;339;Ila1511;1,0;DOMMAGE;89822
+340;340;Ila1511;5,0;Une très belle surprise;39192
+341;341;Ila1511;5,0;Formidable;51320
+342;342;Ila1511;5,0;Un lieu incroyable;51837
+343;343;Ila1511;5,0;Toujours parfait;61147
+344;344;Ila1511;5,0;Séjour magnifique;34752
+345;345;Asclepios48;5,0;Prestations impeccables;22
+346;346;Asclepios48;5,0;Prestations impeccables;91449
+347;347;Asclepios48;5,0;Un sans faute;92011
+348;348;Asclepios48;5,0;Superbe hotel;36265
+349;349;DominicC112;4,0;De passage 3 jours à Paris ;22
+350;350;DominicC112;1,0;A déconseiller ;62085
+351;351;DominicC112;4,0;De passage 3 jours à Paris ;53056
+352;352;DominicC112;4,0;Avant départ en vacances ;80383
+353;353;Laurette44Pornichet;5,0;Toujours aussi bien!;22
+354;354;Laurette44Pornichet;5,0;Toujours aussi bien!;35365
+355;355;Laurette44Pornichet;5,0;Vraiment extra !;32829
+356;356;Laurette44Pornichet;4,0;Bel hôtel avec services à la hauteur;43243
+357;357;Laurette44Pornichet;5,0;Super hotel de luxe;92367
+358;358;Laurette44Pornichet;5,0;Très sympa;74104
+359;359;Laurette44Pornichet;5,0;Au coeur de time square;73993
+360;360;Laurette44Pornichet;4,0;Hôtel bien placé et rénové ;23454
+361;361;Laurette44Pornichet;4,0;Impecc!;97152
+362;362;Gazelle 6901;5,0;Parfait ;22
+363;363;Gazelle 6901;5,0;Parfait ;51628
+364;364;Gazelle 6901;4,0;Bonne surprise quelques améliorations à faire pour que ce soit parfait ;25214
+365;365;Gazelle 6901;2,0;Comment ne pas dormir ;30007
+366;366;Gazelle 6901;3,0;Du bon et du moins bon;31541
+367;367;Gazelle 6901;1,0;Très déçu ;52457
+368;368;Gazelle 6901;1,0;Fuyez : incompétents désagréables et voleurs ;26937
+369;369;Gazelle 6901;3,0;Oui mais...;60729
+370;370;Gazelle 6901;2,0;Bof rien à voir avec les photos du site ;71820
+371;371;Lionel B;5,0;Excellent Service et Hôtel très bien situé;23
+372;372;Lionel B;5,0;Excellent Service et Hôtel très bien situé;57566
+373;373;Lionel B;5,0;Magnifique lieu et un accueil exceptionnel;56203
+374;374;Lionel B;4,0;Excellente situation - Très bon rapport qualité prix;26743
+375;375;Olivier J;5,0;Bon service du soir, hotel propre bien placé, et jolie décor ;23
+376;376;Olivier J;5,0;Bon service du soir, hotel propre bien placé, et jolie décor ;96102
+377;377;Céline D;5,0;Magnifique séjour;23
+378;378;founet76;5,0;Superbe endroit...;23
+379;379;founet76;5,0;Superbe endroit...;96080
+380;380;founet76;5,0;Agréable;44716
+381;381;founet76;5,0;Un endroit exceptionnel,...;28137
+382;382;founet76;5,0;Une belle destination;25104
+383;383;founet76;5,0;Un hôtel bien sympa;13184
+384;384;founet76;5,0;Superbe ;64245
+385;385;founet76;4,0;Pratique;96167
+386;386;Julien;5,0;Séjour parfait;23
+387;387;denisvaginay;4,0;Bien;24
+388;388;991jean;5,0;Un bel accueil dans un bel hôtel bien placé;24
+389;389;afuric862742;5,0;Séjour en Décembre;24
+390;390;tsandr470038;5,0;Hotel calme idéalement placé;24
+391;391;mdupin456349;5,0;excellent;24
+392;392;palls;4,0;PETIT, CALME ET BEAU;25
+393;393;palls;4,0;PETIT, CALME ET BEAU;45420
+394;394;palls;5,0;parfait;37564
+395;395;vadrouillex;4,0;Hôtel calme et confortable - chambre 102 sur rue;25
+396;396;vadrouillex;3,0;Super rapport qualité prix;15027
+397;397;vadrouillex;4,0;Hôtel très grand;23691
+398;398;vadrouillex;4,0;Hôtel calme et confortable - chambre 102 sur rue;96155
+399;399;vadrouillex;5,0;Chambre 505;42355
+400;400;vadrouillex;4,0;Appartement 27 au rez de chaussée;36543
+401;401;betty;2,0;Endroit non sécurisé;25
+402;402;betty;2,0;Endroit non sécurisé;29974
+403;403;Capitaine R;4,0;2 nuits à la chambre 107;25
+404;404;Capitaine R;5,0;Week end autour de cognac ;41192
+405;405;Capitaine R;4,0;2 nuits à la chambre 107;69537
+406;406;Capitaine R;4,0;1 nuit ;75085
+407;407;Capitaine R;3,0;2 nuits dans la chambre 23.;55431
+408;408;gnadgo;5,0;Un petit nid douillet ;25
+409;409;gnadgo;3,0;Moyen;40531
+410;410;gnadgo;5,0;Un petit nid douillet ;48334
+411;411;Alizéa;1,0;ARNAQUE !;26
+412;412;Alizéa;1,0;ARNAQUE !;81822
+413;413;Alizéa;1,0;ARNAQUE;27347
+414;414;Anne-karen F;2,0;décevant;26
+415;415;jeanvandelaar;5,0;à recommander !;26
+416;416;jeanvandelaar;5,0;à recommander !;77080
+417;417;jeanvandelaar;4,0;Une très bonne adresse;33712
+418;418;jeanvandelaar;4,0;à recommander !;29313
+419;419;Jean-James77700;4,0;1 nuit en famille pour le réveillon;26
+420;420;Jean-James77700;4,0;1 nuit en famille pour le réveillon;87278
+421;421;vfayat;5,0;Charmant, de quelité  et bon prix;26
+422;422;Thierry B;4,0;Appart’hotel bien situé ;27
+423;423;Thierry B;4,0;Appart’hotel bien situé ;50690
+424;424;Thierry B;4,0;Très bien placé ....;97838
+425;425;Thierry B;2,0;Studio de toute petite taille.;29641
+426;426;Thierry B;4,0;Etablissement très bien placé.;70984
+427;427;Abdou404;4,0;Hotel calme très bien situé;27
+428;428;Sak13;4,0;EXCELLENT SEJOUR;27
+429;429;Sak13;4,0;EXCELLENT SEJOUR;74526
+430;430;Sak13;5,0;REPOS ET DETENTE SONT DE RIGUEUR DANS CET ETABLISSEMENT;82495
+431;431;Sak13;4,0;BON EMPLACEMENT;63246
+432;432;Sak13;4,0;PETIT HOTEL SYMPA;52616
+433;433;Sak13;4,0;RÉSIDENCE SUPER;53706
+434;434;Sak13;4,0;hotel tres bien place, avec vue magnifique sur la marina et la plage;25702
+435;435;Sak13;4,0;sejour très reposant à Port el Kantaoui;82849
+436;436;Sak13;4,0;Simple, mais sympa;32354
+437;437;Sak13;4,0;Très bel hôtel;84480
+438;438;Sak13;4,0;HAVRE DE PAIX;91928
+439;439;Sak13;4,0;RÉSIDENCE SUPER;24390
+440;440;Sak13;3,0;réveillon au zodiac;10090
+441;441;Sak13;4,0;HÔTEL SYMPA. BON RAPPORT QUALITE/PRIX;13322
+442;442;Sak13;4,0;Merveilleux camping !;75062
+443;443;chistelle71;5,0;Séjour Paris 13 ème;27
+444;444;Terry_Steph;4,0;Excellent établissement ;27
+445;445;Terry_Steph;4,0;Recommandé ;33088
+446;446;Terry_Steph;4,0;Excellent établissement ;32848
+447;447;Terry_Steph;5,0;Excellent sejour;17370
+448;448;Terry_Steph;4,0;Excellent hôtel ;97212
+449;449;Terry_Steph;3,0;Correct ;27004
+450;450;Olivier G;3,0;Une nuit au Kyriad Gobelins;28
+451;451;Olivier G;3,0;Une nuit au Kyriad Gobelins;69797
+452;452;Olivier G;4,0;IBIS BUDGET TOURS NORD MARS 2016;51367
+453;453;Olivier G;4,0;IBIS BUDGET LA CRECHE;12418
+454;454;Olivier G;4,0;Ibis Budget Blagnac janvier 2016;26932
+455;455;Olivier G;4,0;Ibis Budget Blois janvier 2016;80172
+456;456;Olivier G;4,0;ibis Budget Déols janvier 2016;62647
+457;457;Olivier G;4,0;Ibis Budget Bourges janvier 2016;82458
+458;458;Olivier G;5,0;IBIS BUDGET TOURS NORD;89274
+459;459;patgabar;4,0;sejour Paris;28
+460;460;Shana Priscilla;5,0;Hôtel très bon rapport qualité prix ;28
+461;461;Kiki130122020;4,0;SEJOUR AU KYRIAD LES GOBELINS;28
+462;462;Chris;5,0;Weekend à Paris;28
+463;463;Fil38;4,0;Très bien!;29
+464;464;Fil38;4,0;Très bien!;79358
+465;465;Fil38;4,0;Agréable séjour;45461
+466;466;Fil38;5,0;Superbe résidence! ;98068
+467;467;Fil38;4,0;Bel hotel bon rapport qualité prix;11953
+468;468;Fil38;4,0;Très bon séjours à Londres en famille;40443
+469;469;Fil38;3,0;Vacances au ski;14873
+470;470;Fil38;4,0;Bon rapport qualité prix;70172
+471;471;Fil38;4,0;une bonne adresse, hôtel bien placé;60242
+472;472;Fil38;5,0;Superbes vacances;64175
+473;473;marc7986;4,0;Séjour ;29
+474;474;marc7986;4,0;Séjour ;67749
+475;475;marc7986;3,0;Hotel sympathique;88797
+476;476;Globetrotting80141;5,0;Super;29
+477;477;Ldef;5,0;Génial ;29
+478;478;Ldef;3,0;Plutôt bon ;81715
+479;479;Ldef;5,0;Génial ;42475
+480;480;Ldef;4,0;Très bon hôtel ;12533
+481;481;EdSeb D;4,0;hotel très charmant ;29
+482;482;EdSeb D;3,0;Peu mieux faire;24871
+483;483;EdSeb D;4,0;Bon séjour.;10770
+484;484;EdSeb D;4,0;hotel très charmant ;88110
