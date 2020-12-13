@@ -45,14 +45,12 @@ hotels_rate = []
 hotels_location = []
 hotels_id = []
 hotels_description = []
-hotels_list = hotels_name,hotels_link
 
 reviews_name = []
 reviews_rate = []
 reviews_title = []
 reviews_id = []
 id_hotel = []
-reviews_list = reviews_name,reviews_rate,reviews_title
 
 page = 0
 nb_page = 1
@@ -68,6 +66,7 @@ for i in range(nb_page):
     
     if home_soup.find_all('a',  class_='property_title prominent')!=None:
         for a in home_soup.find_all('a',  class_='property_title prominent'):
+            
             # On parcourt chaque hotel et on récupère le lien
             hotels_name.append(a.text.replace('\n',"").strip())
             #print(hotels_name)
@@ -86,12 +85,10 @@ for i in range(nb_page):
                 hotels_rate.append(None)
                 
             if hotel_soup.find('span', class_="_3ErVArsu jke2_wbp") != None:
-                hotels_location.append(hotel_soup.find('span', class_="_3cjYfwwQ").text)
+                hotels_location.append(hotel_soup.find('span', class_="_3ErVArsu jke2_wbp").text)
             else:
                 hotels_location.append(None)
-                
-            hotels_location.append(hotel_soup.find('span', class_="_3ErVArsu jke2_wbp").text)
-            
+                            
             hotels_id.append(h_id)
            
             
@@ -190,6 +187,7 @@ for i in range(nb_page):
                                                 hotels_link.append(new_hotel_link)
                                                 hotels_rate.append(new_hotel_soup.find('span', class_="_3cjYfwwQ").text)
                                                 hotels_location.append(new_hotel_soup.find('span', class_="_3ErVArsu jke2_wbp").text)
+                                                
                                                 new_hotel_id = randint(10000, 100000)
                                                 hotels_id.append(new_hotel_id)
                                                 id_hotel.append(new_hotel_id)
