@@ -23,6 +23,7 @@ def hotels_tab_creation():
     
     return hotels_name,hotels_link,hotels_rate,hotels_location,hotels_id,hotels_description
 
+
 def reviews_tab_creation(): 
     reviews_name = []
     reviews_rate = []
@@ -36,6 +37,7 @@ def reviews_tab_creation():
 def create_rating(rating):
     new_rating = rating[0]+","+rating[1]
     return new_rating
+
 
 def delete_chars(rating):
     char_to_delete = 'abcdefghijklmnopqrstuvwxyz<>/="_'
@@ -62,14 +64,14 @@ def get_hotelid_from_URL(url):
 
 def get_cid_from_username_in_URL(url):
     cut_url = url[35:]
-    c_id = hash(cut_url)
-    return c_id
+    u_id = hash(cut_url)
+    return u_id
 
 
 def hotel_scraping(a):
     
     hotels_name,hotels_link,hotels_rate,hotels_location,hotels_id,hotels_description = hotels_tab_creation()
-    h_id = totor_function()
+    
     
     # On parcourt chaque hotel et on récupère le lien
     hotels_name.append(a.text.replace('\n',"").strip())
@@ -77,6 +79,7 @@ def hotel_scraping(a):
     full_link = "https://www.tripadvisor.fr" + link
     hotels_link.append(full_link)
     
+    h_id = get_hotelid_from_URL(full_link)
     hotel_content = requests.get(full_link)
     hotel_soup = BeautifulSoup(hotel_content.text, 'lxml')
     
@@ -105,7 +108,7 @@ def hotel_scraping(a):
 def reviews_scraping(review):
     
     reviews_name,reviews_rate,reviews_title,user_id,id_hotel = reviews_tab_creation()
-    c_id = totor_function2()
+    c_id = get_cid_from_username_in_URL()
     
     # On prend les caractéristiques de l'avis
     if review.find('a', class_="ui_header_link _1r_My98y") != None:
@@ -175,8 +178,12 @@ def test_hotel_or_restau(user_review):
             
     return test
 
-def main(nb_page):
-    for i in range(nb_page):
+
+
+if __name__ == "__main__":
+    
+    
+    for i in range(nb_page=2):
         home_soup = homepage_request(1,i=0)
                 
         if home_soup.find_all('a',  class_='property_title prominent') != None:
@@ -191,4 +198,7 @@ def main(nb_page):
                         for user_review in user_reviews:
                             test = test_hotel_or_restau(user_review)
                             if test == "Hotel":
-                                reviews_scraping(user_review)
+                                reviews_scraping(user_review)    
+    
+
+
