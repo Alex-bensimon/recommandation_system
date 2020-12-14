@@ -22,14 +22,15 @@ def main(nb_page=1):
                 print("#"*20,"\n\n")
                 print(hotels_attributs)
                 for review in reviews:
-                    scrap.reviews_scraping(reviews_attributs,review)
+                    scrap.reviews_scraping(reviews_attributs,review,"")
                     result = scrap.test_nb_user_reviews(review)
                     if result == True: 
                         user_reviews = scrap.get_user_link(review)
                         for user_review in user_reviews:
-                            test = scrap.test_hotel_or_restau(user_review)
+                            test,href = scrap.test_hotel_or_restau(user_review)
                             if test == "Hotel":
-                                scrap.reviews_scraping(reviews_attributs,user_review)    
+                                reviews_attributs,new_hotel_soup = scrap.reviews_scraping(reviews_attributs,user_review,href)
+                                hotels_attributs,reviews = scrap.new_hotel_scraping(hotels_attributs,new_hotel_soup,href)
     
     hotels = scrap.creation_hotel_dataframe(hotels_attributs)
     reviews = scrap.creation_review_dataframe(reviews_attributs)

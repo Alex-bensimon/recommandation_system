@@ -99,16 +99,53 @@ def hotel_scraping(hotels_attributs,a):
     
     print("tab : ", hotels_attributs)
     # On parcourt chaque hotel et on récupère le lien
-    hotels_attributs[0].append(a.text.replace('\n',"").strip())
     link = a['href'].replace('\n',"")
     full_link = "https://www.tripadvisor.fr" + link
     hotels_attributs[1].append(full_link)
-    
-    
-    
+      
     hotel_content = requests.get(full_link)
     hotel_soup = BeautifulSoup(hotel_content.text, 'lxml')
     
+    if hotel_soup.find('h1', class_="_1mTlpMC3") != None:
+        hotels_attributs[0].append(hotel_soup.find('h1', class_="_1mTlpMC3").text.replace('\n',"").strip())
+    else:
+        hotels_attributs[0].append(None)
+    # On prend ses caractéristiques
+    if hotel_soup.find('span', class_="_3cjYfwwQ") != None:
+        hotels_attributs[2].append(hotel_soup.find('span', class_="_3cjYfwwQ").text)
+    else:
+        hotels_attributs[2].append(None)
+        
+    if hotel_soup.find('span', class_="_3ErVArsu jke2_wbp") != None:
+        hotels_attributs[3].append(hotel_soup.find('span', class_="_3ErVArsu jke2_wbp").text)
+    else:
+        hotels_attributs[3].append(None)
+    
+    h_id = get_hotelid_from_URL(full_link)                
+    hotels_attributs[4].append(h_id)
+    
+     # Là, c'est les 5 div des commentaires
+    if hotel_soup.find_all('div', class_='_2wrUUKlw _3hFEdNs8') != None:
+        reviews = hotel_soup.find_all('div', class_='_2wrUUKlw _3hFEdNs8')
+    else:
+        print("Comments fail")
+    
+    return hotels_attributs,reviews
+
+
+def new_hotel_scraping(hotels_attributs,new_hotel_soup,href):
+    
+    link = href
+    full_link = "https://www.tripadvisor.fr" + link
+    hotels_attributs[1].append(full_link)
+      
+    hotel_content = requests.get(full_link)
+    hotel_soup = BeautifulSoup(hotel_content.text, 'lxml')
+    
+    if hotel_soup.find('h1', class_="_1mTlpMC3") != None:
+        hotels_attributs[0].append(hotel_soup.find('h1', class_="_1mTlpMC3").text.replace('\n',"").strip())
+    else:
+        hotels_attributs[0].append(None)
     # On prend ses caractéristiques
     if hotel_soup.find('span', class_="_3cjYfwwQ") != None:
         hotels_attributs[2].append(hotel_soup.find('span', class_="_3cjYfwwQ").text)
@@ -132,8 +169,7 @@ def hotel_scraping(hotels_attributs,a):
     return hotels_attributs,reviews
             
 
-def reviews_scraping(reviews_attributs,review):
-    
+def reviews_scraping(reviews_attributs,review,href):
     
     # On prend les caractéristiques de l'avis
     if review.find('a', class_="ui_header_link _1r_My98y") != None:
@@ -143,14 +179,13 @@ def reviews_scraping(reviews_attributs,review):
     
     if review.find('span', class_="ui_bubble_rating") != None:
         rating = review.find('span', class_="ui_bubble_rating")
+        rating = delete_chars(rating)
+        new_rate = create_rating(rating)                
+        reviews_attributs[1].append(new_rate)
     else: 
         reviews_attributs[1].append(None)
         print("No rating")
         
-    rating = delete_chars(rating)
-        
-    new_rate = create_rating(rating)                
-    reviews_attributs[1].append(new_rate)
     
     if review.find('a', class_="ocfR3SKN") != None:
         reviews_attributs[2].append(review.find('a', class_="ocfR3SKN").text)
@@ -161,7 +196,11 @@ def reviews_scraping(reviews_attributs,review):
     reviews_attributs[3].append(u_id)
     reviews_attributs[4].append("A CHANGER")
     
-    return reviews_attributs
+    new_hotel_link = "https://www.tripadvisor.fr" + href
+    new_hotel = requests.get(new_hotel_link)
+    new_hotel_soup = BeautifulSoup(new_hotel.text, 'lxml')
+
+    return reviews_attributs,new_hotel_soup
         
 
 def test_nb_user_reviews(review):
@@ -204,7 +243,7 @@ def test_hotel_or_restau(user_review):
             # On chercher à savoir si le commentaire est sur un hôtel ou restau
             test = href[1:6]
             
-    return test
+    return test,href
 
 
 
@@ -224,9 +263,10 @@ if __name__ == "__main__":
                     if result == True: 
                         user_reviews = get_user_link(review)
                         for user_review in user_reviews:
-                            test = test_hotel_or_restau(user_review)
+                            test,href = test_hotel_or_restau(user_review)
                             if test == "Hotel":
-                                reviews_scraping(user_review)    
+                                reviews_attributs,new_hotel_soup = reviews_scraping(user_review,href)
+                                hotel_scraping(new_hotel_soup)
     
 
 
