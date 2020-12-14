@@ -30,8 +30,16 @@ def main(nb_page=1):
                             test = scrap.test_hotel_or_restau(user_review)
                             if test == "Hotel":
                                 scrap.reviews_scraping(reviews_attributs,user_review)    
+    
+    hotels = scrap.creation_hotel_dataframe(hotels_attributs)
+    reviews = scrap.creation_review_dataframe(reviews_attributs)
+    hotels.to_csv("data/hotels.csv")
+    reviews.to_csv("data/reviews.csv")
+
+    
+    return hotels_attributs,reviews_attributs
 
 
 
 if __name__ == "__main__":
-    main()
+    hotel,review = main()

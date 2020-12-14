@@ -19,9 +19,9 @@ def hotels_tab_creation():
     hotels_rate = []            #2
     hotels_location = []        #3
     hotels_id = []              #4
-    hotels_description = []     #5
+#    hotels_description = []     #5
     
-    hotels_attributs = hotels_name,hotels_link,hotels_rate,hotels_location,hotels_id,hotels_description   
+    hotels_attributs = hotels_name,hotels_link,hotels_rate,hotels_location,hotels_id#,hotels_description   
     return hotels_attributs
 
 def reviews_tab_creation(): 
@@ -33,6 +33,31 @@ def reviews_tab_creation():
     
     reviews_attributs = reviews_name,reviews_rate,reviews_title,user_id,id_hotel
     return reviews_attributs
+
+
+def creation_hotel_dataframe(hotels_attributs):
+
+    hotels = pd.DataFrame({
+        'name': hotels_attributs[0],
+        'link': hotels_attributs[1],
+        'rate': hotels_attributs[2],
+        'location': hotels_attributs[3],
+        'h_id': hotels_attributs[4],
+#        'description': hotels_attributs[5],
+    })    
+    return hotels
+
+
+def creation_review_dataframe(reviews_attributs):
+
+    hotels = pd.DataFrame({
+        'name': reviews_attributs[0],
+        'rate': reviews_attributs[1],
+        'title': reviews_attributs[2],
+        'u_id': reviews_attributs[3],
+        'h_id': reviews_attributs[4],
+    })
+    return hotels
 
 
 def create_rating(rating):
@@ -79,7 +104,7 @@ def hotel_scraping(hotels_attributs,a):
     full_link = "https://www.tripadvisor.fr" + link
     hotels_attributs[1].append(full_link)
     
-    h_id = get_hotelid_from_URL(full_link)
+    
     
     hotel_content = requests.get(full_link)
     hotel_soup = BeautifulSoup(hotel_content.text, 'lxml')
@@ -94,7 +119,8 @@ def hotel_scraping(hotels_attributs,a):
         hotels_attributs[3].append(hotel_soup.find('span', class_="_3ErVArsu jke2_wbp").text)
     else:
         hotels_attributs[3].append(None)
-                    
+    
+    h_id = get_hotelid_from_URL(full_link)                
     hotels_attributs[4].append(h_id)
     
      # Là, c'est les 5 div des commentaires
@@ -108,7 +134,6 @@ def hotel_scraping(hotels_attributs,a):
 
 def reviews_scraping(reviews_attributs,review):
     
-    u_id = get_cid_from_username_in_URL(review)
     
     # On prend les caractéristiques de l'avis
     if review.find('a', class_="ui_header_link _1r_My98y") != None:
@@ -119,6 +144,7 @@ def reviews_scraping(reviews_attributs,review):
     if review.find('span', class_="ui_bubble_rating") != None:
         rating = review.find('span', class_="ui_bubble_rating")
     else: 
+        reviews_attributs[1].append(None)
         print("No rating")
         
     rating = delete_chars(rating)
@@ -130,7 +156,8 @@ def reviews_scraping(reviews_attributs,review):
         reviews_attributs[2].append(review.find('a', class_="ocfR3SKN").text)
     else:
         reviews_attributs[2].append(None)
-        
+    
+    u_id = get_cid_from_username_in_URL(review)
     reviews_attributs[3].append(u_id)
     reviews_attributs[4].append("A CHANGER")
     
