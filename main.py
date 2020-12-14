@@ -34,8 +34,8 @@ def main(nb_page=1):
     
     hotels = scrap.creation_hotel_dataframe(hotels_attributs)
     reviews = scrap.creation_review_dataframe(reviews_attributs)
-    hotels.to_csv("data/hotels.csv")
-    reviews.to_csv("data/reviews.csv")
+    hotels.to_csv("data/hotels.csv", encoding="utf-8")
+    reviews.to_csv("data/reviews.csv", encoding="utf-8")
 
     
     return hotels_attributs,reviews_attributs
