@@ -208,7 +208,7 @@ def user_reviews_scraping(reviews_attributs,review,href,h_id):
     # On prend les caractéristiques de l'avis
     print("#"*20,"REVIEW : ","#"*20,"\n\n")
     print(review)
-    if review.find('a', class_="ui_header_link _1r_My98y") != None:
+    if review.find('a', class_="ui_link _1r_My98y") != None:
         reviews_attributs[0].append(review.find('a', class_="ui_link _1r_My98y").text)
     else: 
         reviews_attributs[0].append(None)
