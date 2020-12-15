@@ -130,7 +130,7 @@ def hotel_scraping(hotels_attributs,a):
     else:
         print("Comments fail")
     
-    return hotels_attributs,reviews
+    return hotels_attributs,reviews,h_id
 
 
 def new_hotel_scraping(hotels_attributs,new_hotel_soup,href):
@@ -169,13 +169,14 @@ def new_hotel_scraping(hotels_attributs,new_hotel_soup,href):
     return hotels_attributs,reviews
             
 
-def reviews_scraping(reviews_attributs,review,href):
+def reviews_scraping(reviews_attributs,review,href,h_id):
     
     # On prend les caractéristiques de l'avis
     if review.find('a', class_="ui_header_link _1r_My98y") != None:
         reviews_attributs[0].append(review.find('a', class_="ui_header_link _1r_My98y").text)
     else: 
         reviews_attributs[0].append(None)
+        
     
     if review.find('span', class_="ui_bubble_rating") != None:
         rating = review.find('span', class_="ui_bubble_rating")
@@ -194,7 +195,7 @@ def reviews_scraping(reviews_attributs,review,href):
     
     u_id = get_cid_from_username_in_URL(review)
     reviews_attributs[3].append(u_id)
-    reviews_attributs[4].append("A CHANGER")
+    reviews_attributs[4].append(h_id)
     
     new_hotel_link = "https://www.tripadvisor.fr" + href
     new_hotel = requests.get(new_hotel_link)
