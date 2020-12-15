@@ -23,7 +23,7 @@ def main(nb_page=1):
                 for review in reviews:
                     reviews_attributs,new_hotel_soup = scrap.reviews_scraping(reviews_attributs,review,"",h_id)
                     print("#"*20,"Boucle 1: ","#"*20,"\n\n")
-                    print(reviews_attributs)
+                    #print(reviews_attributs)
                     result = scrap.test_nb_user_reviews(review)
                     if result == True: 
                         user_reviews = scrap.get_user_link(review)
@@ -32,9 +32,9 @@ def main(nb_page=1):
                             if test == "Hotel":
                                 url = "https://www.tripadvisor.fr"+href
                                 h_id = scrap.get_hotelid_from_URL(url)
-                                reviews_attributs,new_hotel_soup = scrap.reviews_scraping(reviews_attributs,user_review,href,h_id)
+                                reviews_attributs,new_hotel_soup = scrap.user_reviews_scraping(reviews_attributs,user_review,href,h_id)
                                 print("#"*20,"Boucle 2: ","#"*20,"\n\n")
-                                print(reviews_attributs)
+                                #print(reviews_attributs)
                                 hotels_attributs,reviews = scrap.new_hotel_scraping(hotels_attributs,new_hotel_soup,href)
     
     hotels = scrap.creation_hotel_dataframe(hotels_attributs)
