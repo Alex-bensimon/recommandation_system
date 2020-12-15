@@ -97,7 +97,6 @@ def get_cid_from_username_in_URL(review):
 
 def hotel_scraping(hotels_attributs,a):
     
-    print("tab : ", hotels_attributs)
     # On parcourt chaque hotel et on récupère le lien
     link = a['href'].replace('\n',"")
     full_link = "https://www.tripadvisor.fr" + link
@@ -172,6 +171,8 @@ def new_hotel_scraping(hotels_attributs,new_hotel_soup,href):
 def reviews_scraping(reviews_attributs,review,href,h_id):
     
     # On prend les caractéristiques de l'avis
+    print("#"*20,"REVIEW : ","#"*20,"\n\n")
+    print(review)
     if review.find('a', class_="ui_header_link _1r_My98y") != None:
         reviews_attributs[0].append(review.find('a', class_="ui_header_link _1r_My98y").text)
     else: 

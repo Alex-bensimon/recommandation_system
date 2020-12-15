@@ -18,9 +18,12 @@ def main(nb_page=1):
                 
         if home_soup.find_all('a',  class_='property_title prominent') != None:
             for hotel_url in home_soup.find_all('a',  class_='property_title prominent'):
+                print("\n \n hotel_url : ", hotel_url)
                 hotels_attributs,reviews,h_id = scrap.hotel_scraping(hotels_attributs,hotel_url)
                 for review in reviews:
                     reviews_attributs,new_hotel_soup = scrap.reviews_scraping(reviews_attributs,review,"",h_id)
+                    print("#"*20,"Boucle 1: ","#"*20,"\n\n")
+                    print(reviews_attributs)
                     result = scrap.test_nb_user_reviews(review)
                     if result == True: 
                         user_reviews = scrap.get_user_link(review)
@@ -30,6 +33,8 @@ def main(nb_page=1):
                                 url = "https://www.tripadvisor.fr"+href
                                 h_id = scrap.get_hotelid_from_URL(url)
                                 reviews_attributs,new_hotel_soup = scrap.reviews_scraping(reviews_attributs,user_review,href,h_id)
+                                print("#"*20,"Boucle 2: ","#"*20,"\n\n")
+                                print(reviews_attributs)
                                 hotels_attributs,reviews = scrap.new_hotel_scraping(hotels_attributs,new_hotel_soup,href)
     
     hotels = scrap.creation_hotel_dataframe(hotels_attributs)
