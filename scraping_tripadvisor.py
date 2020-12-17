@@ -14,7 +14,19 @@ Possibilité de créer un profil user : ce qu'il aime, critères qui l'intéress
 
 On prend 1 ville, on scrape tous les commentaires (ou on se limite un peu) mais seulement le
 titre. Puis on clique sur le profil de chacun et on récupère ses avis et description des 
-hôtels. 
+hôtels.
+
+Faire un stemming avant TF-IDF
+
+Concaténer tous les com d'un hotel et mettre dans une colonne puis TF-IDF
+Prendre seulement les hotels que l'user a visité puis multiplier par les notes que l'user a 
+donné pour donner un poids. On saura le poids de chaque mot pour un user
+
+ou 
+
+Faire TF-IDF puis cosine sim de tous les hotels pour trouver les hotels les + similaires
+Prendre les avis avec une note supérieure à 4 et stocker leur ID
+Comparer les hotels les + similaires à chaque hotel que l'user a aimé
 """
 
 import requests

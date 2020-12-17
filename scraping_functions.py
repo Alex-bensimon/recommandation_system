@@ -85,6 +85,7 @@ def get_hotelid_from_URL(url):
     regex = r"(?<=[g,d])([0-9]*)(?=-)"
     matchs = re.findall(regex, cut_url)
     h_id = "".join(matchs)
+    
     return int(h_id)
 
 
@@ -92,6 +93,7 @@ def get_cid_from_username_in_URL(review):
     url = review.find('a',href = True)
     cut_url = url['href'][9:]
     u_id = hash(cut_url)
+    
     return u_id
 
 
@@ -171,7 +173,7 @@ def new_hotel_scraping(hotels_attributs,new_hotel_soup,href):
 def reviews_scraping(reviews_attributs,review,href,h_id):
     
     # On prend les caractéristiques de l'avis
-    print("#"*20,"REVIEW : ","#"*20,"\n\n")
+    #print("#"*20,"REVIEW : ","#"*20,"\n\n")
     if review.find('a', class_="ui_header_link _1r_My98y") != None:
         reviews_attributs[0].append(review.find('a', class_="ui_header_link _1r_My98y").text)
     else: 
@@ -206,8 +208,7 @@ def reviews_scraping(reviews_attributs,review,href,h_id):
 def user_reviews_scraping(reviews_attributs,review,href,h_id):
     
     # On prend les caractéristiques de l'avis
-    print("#"*20,"REVIEW : ","#"*20,"\n\n")
-    print(review)
+    #print("#"*20,"REVIEW : ","#"*20,"\n\n")
     if review.find('a', class_="ui_link _1r_My98y") != None:
         reviews_attributs[0].append(review.find('a', class_="ui_link _1r_My98y").text)
     else: 
@@ -247,10 +248,8 @@ def test_nb_user_reviews(review):
         nb_comment = "10000000"
     if len(nb_comment) <= 4 and int(nb_comment) > 1:
         result = True
-        print("True")
     else:
         result = False
-        print("False")
         
     return result
 
