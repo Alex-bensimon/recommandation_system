@@ -36,18 +36,18 @@ for review in hotels_id_list:
     # On teste pour savoir le type de rev
     if type(rev) == str:
         # On garde la variable comme ça si c'est un string
-        liste = rev
+        liste2 = rev
     else:
         # On convertit la pandas.series en liste facilement lisible
         liste = rev.tolist()
+        # On convertit la liste en string car on veut juste tous les mots
+        liste2 = ' '.join([str(elem) for elem in liste]) 
         
     # On ajoute nos variables aux tableaux
-    all_reviews.append(liste)
+    all_reviews.append(liste2)
     all_h_id.append(review)
 
 # On créé le df à partir des 2 tableaux
-new_df = pd.DataFrame({
-        'Hotel id':all_h_id,
-        'reviews': all_reviews})
+new_df = pd.DataFrame({'Hotel id':all_h_id,'reviews': all_reviews})
 
 print(new_df)
