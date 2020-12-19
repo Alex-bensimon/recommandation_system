@@ -270,6 +270,8 @@ def get_user_link(review):
 
 
 def test_hotel_or_restau(user_review):
+    href = ""
+    test = ""
     if user_review.find('div', class_='_2X5tM2jP _2RdXRsdL _1gafur1D') != None:
         div = user_review.find('div', class_='_2X5tM2jP _2RdXRsdL _1gafur1D')
         if div.find('a') != None:

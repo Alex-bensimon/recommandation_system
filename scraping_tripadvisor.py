@@ -29,6 +29,7 @@ Prendre les avis avec une note supérieure à 4 et stocker leur ID
 Comparer les hotels les + similaires à chaque hotel que l'user a aimé
 """
 
+
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd

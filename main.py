@@ -34,7 +34,7 @@ def main(nb_page=20):
                         user_reviews = scrap.get_user_link(review)
                         for user_review in user_reviews:
                             test,href = scrap.test_hotel_or_restau(user_review)
-                            if test == "Hotel":
+                            if test == "Hotel":     
                                 url = "https://www.tripadvisor.fr"+href
                                 h_id = scrap.get_hotelid_from_URL(url)
                                 reviews_attributs,new_hotel_soup = scrap.user_reviews_scraping(reviews_attributs,user_review,href,h_id)
