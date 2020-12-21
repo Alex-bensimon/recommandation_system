@@ -19,7 +19,7 @@ hôtels.
 Faire un stemming avant TF-IDF
 
 Concaténer tous les com d'un hotel et mettre dans une colonne puis TF-IDF
-Prendre seulement les hotels que l'user a visité puis multiplier par les notes que l'user a 
+Prendre seulement les hotels que le user a visité puis multiplier par les notes que l'user a 
 donné pour donner un poids. On saura le poids de chaque mot pour un user
 
 ou 

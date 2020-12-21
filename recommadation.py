@@ -3,9 +3,11 @@
 Created on Thu Dec 17 13:36:59 2020
 
 @author: Alex
+
+i=df[df[‘Name’]==’Will’]
+print(i)
+print(new_df['h_id']==187147198174])
 """
-
-
 import pandas as pd 
 import nltk 
 from nltk.tokenize import sent_tokenize, word_tokenize
@@ -13,71 +15,134 @@ from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.stem import PorterStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity, linear_kernel
 
-hotels = pd.read_csv('hotels.csv')
-reviews = pd.read_csv('reviews.csv', index_col = 'h_id')
 
-# On supprime tous les doublons 
-reviews.drop_duplicates(subset ="title",keep = 'first', inplace=True)
-hotels.drop_duplicates(subset ="name",keep = 'first', inplace=True)
-
-# On affiche le nombre de lignes qu'il nous reste
-print(hotels.info())
-print(reviews.info())
-
-# On créé une liste de tous les id en supprimant les id en doublons
-hotels_id_list = reviews.index.drop_duplicates(keep = 'first')
-
-# On créé 2 tableaux qui permettront de créer le dataframe des avis
-all_reviews = []
-all_h_id = []
-
-# On parcourt notre liste d'ID uniques 
-for review in hotels_id_list:
+def create_clean_df():
+    hotels = pd.read_csv('hotels.csv')
+    reviews = pd.read_csv('reviews.csv', index_col = 'h_id')
     
-    # On séléctionne la/les ligne(s) contenant l'ID et on récupère le titre du commentaire
-    # On obtient soit un string s'il y a 1 seul commentaire pour l'hotel en question soit une liste de string
-    rev = reviews.loc[review].title
+    # On supprime tous les doublons 
+    reviews.drop_duplicates(subset ="title",keep = 'first', inplace=True)
+    hotels.drop_duplicates(subset ="name",keep = 'first', inplace=True)
     
-    # On teste pour savoir le type de rev
-    if type(rev) == str:
-        # On garde la variable comme ça si c'est un string
-        liste2 = rev
-    else:
-        # On convertit la pandas.series en liste facilement lisible
-        liste = rev.tolist()
-        # On convertit la liste en string car on veut juste tous les mots
-        liste2 = ' '.join([str(elem) for elem in liste]) 
-    
-    txt = liste2
-    txt.lower().split()
-    txt = txt.lower()
-    sentence_list = sent_tokenize(txt)    
-    word_list = word_tokenize(txt)
+    # On affiche le nombre de lignes qu'il nous reste
+    print(hotels.info())
+    print(reviews.info())
+    return hotels,reviews
 
-    liste_ponct = [",", ".", "!", "?", ";"]
-    word_to_del = liste_ponct + stopwords.words('french')
+
+def nlp_processing(hotels_id_list,hotels,reviews):
     
-    word_list = [word for word in word_list if word not in word_to_del]
+    # On créé 2 tableaux qui permettront de créer le dataframe des avis
+    all_reviews = []
+    all_h_id = []
+    
+    # On parcourt notre liste d'ID uniques 
+    for h_id in hotels_id_list:
+        
+        # On séléctionne la/les ligne(s) contenant l'ID et on récupère le titre du commentaire
+        # On obtient soit un string s'il y a 1 seul commentaire pour l'hotel en question soit une liste de string
+        rev = reviews.loc[h_id].title
+        # On teste pour savoir le type de rev
+        if type(rev) == str:
+            # On garde la variable comme ça si c'est un string
+            liste_str = rev
+        else:
+            # On convertit la pandas.series en liste facilement lisible
+            liste = rev.tolist()
+            # On convertit la liste en string car on veut juste tous les mots
+            liste_str = ' '.join([str(elem) for elem in liste]) 
+        
+        liste_str = liste_str.lower()
+        word_list = word_tokenize(liste_str)
+    
+        liste_ponct = [",", ".", "!", "?", ";"]
+        word_to_del = liste_ponct + stopwords.words('french')
+        
+        word_list = [word for word in word_list if word not in word_to_del]
+        
+        stem_word_list = stemming_word(word_list)      
+        new_list =  ' '.join([str(elem) for elem in stem_word_list]) 
+        
+        # On ajoute nos variables aux tableaux
+        all_reviews.append(new_list)
+        all_h_id.append(h_id)
+            
+        # On créé le df à partir des 2 tableaux
+        df = pd.DataFrame({'h_id':all_h_id,'reviews': all_reviews})     
+    
+    return df
+  
+    
+def stemming_word(word_list):
 
     port_stemmer = PorterStemmer()
-    port_stemmer_word_list = []
+    stem_word_list = []
     
-    for port_stem in word_list:
-        port_stem_word = port_stemmer.stem(port_stem)
-        port_stemmer_word_list.append(port_stem_word)
-        
-    new_list =  ' '.join([str(elem) for elem in port_stemmer_word_list]) 
-    # On ajoute nos variables aux tableaux
-    all_reviews.append(new_list)
-    all_h_id.append(review)
+    for word in word_list:
+        stem_word = port_stemmer.stem(word)
+        stem_word_list.append(stem_word)
+    
+    return stem_word_list
+    
 
-# On créé le df à partir des 2 tableaux
-new_df = pd.DataFrame({'Hotel id':all_h_id,'reviews': all_reviews})
+def tfidf_on_reviews(df):
+    
+    reviews = df['reviews']
+    
+    tfidfs = TfidfVectorizer()
+    tf_matrice = tfidfs.fit_transform(reviews)
 
-print(new_df)
+    tfidf_tokens = tfidfs.get_feature_names()
+    
+    df_tfidfvect = pd.DataFrame(data = tf_matrice.toarray(),index = df["h_id"], columns = tfidf_tokens)
 
-reviews = new_df['reviews']
-tfidfs = TfidfVectorizer()
-tf_matrice = tfidfs.fit_transform(reviews)
+    print("\nTD-IDF Vectorizer\n")
+    print(df_tfidfvect)
+    return(df_tfidfvect)
 
+#fonction de recommandation
+"""
+def recommandation(u_id):
+    idx = indices[title]
+    sim_score = list(enumerate(cosine_sim[idx]))
+    sim_score = sorted(sim_score, key = lambda x: x[1], reverse = True)  # lambda : trier selon le cosinus de sim_score
+    sim_score = sim_score[1:5]       #On prend pas le premier film car c'est lui même
+    movie_indice = [i[0] for i in sim_score]
+    return movies['title'].iloc[movie_indice]
+"""
+
+def recommandation(reviews):
+    h_id_list = []
+    users = []
+    reviews_up = reviews[reviews['rate'].str.contains('4') | reviews['rate'].str.contains('5')]  
+    users_id_list = reviews_up.index
+    
+    for u_id in users_id_list:
+        print(u_id)
+        all_h_id = reviews_up.loc[u_id].h_id
+        h_id_list.append(all_h_id)
+        users.append(u_id)
+            
+    df_users = pd.DataFrame({'u_id':users,'all_h_id': h_id_list})  
+    return(df_users)
+    
+    
+
+if __name__ == "__main__":
+    
+    hotels, reviews = create_clean_df()
+    hotels_id_list = reviews.index.drop_duplicates(keep = 'first')
+    df = nlp_processing(hotels_id_list, hotels, reviews)
+    df_tfidfvect = tfidf_on_reviews(df)
+    cosine_sim = linear_kernel(df_tfidfvect, df_tfidfvect)
+    
+    reviews = pd.read_csv('reviews.csv', index_col = 'u_id')
+    df_users = recommandation(reviews)
+    
+    
+   
+       
+    
+    
