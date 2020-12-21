@@ -102,35 +102,39 @@ def tfidf_on_reviews(df):
     print(df_tfidfvect)
     return(df_tfidfvect)
 
-#fonction de recommandation
-"""
-def recommandation(u_id):
-    idx = indices[title]
-    sim_score = list(enumerate(cosine_sim[idx]))
-    sim_score = sorted(sim_score, key = lambda x: x[1], reverse = True)  # lambda : trier selon le cosinus de sim_score
-    sim_score = sim_score[1:5]       #On prend pas le premier film car c'est lui même
-    movie_indice = [i[0] for i in sim_score]
-    return movies['title'].iloc[movie_indice]
-"""
 
-def recommandation(reviews):
+
+def get_df_with_best_reviews(reviews):
     h_id_list = []
     users = []
-    reviews_up = reviews[reviews['rate'].str.contains('4') | reviews['rate'].str.contains('5')]  
-    users_id_list = reviews_up.index
-    
+    users_id_list = reviews['u_id']
+        
     for u_id in users_id_list:
-        print(u_id)
-        all_h_id = reviews_up.loc[u_id].h_id
+
+        all_h_id = reviews.loc[(reviews['u_id'] == u_id) & (reviews['rate'] >= 4)].h_id.values
+        print(type(all_h_id))
         h_id_list.append(all_h_id)
         users.append(u_id)
             
     df_users = pd.DataFrame({'u_id':users,'all_h_id': h_id_list})  
     return(df_users)
     
+
+
+def get_recommandation(df, cosine_sim, h_id):
     
+   # list_hotel_id = df['h_id']
+    number_hotel = df.index[df['h_id'] == h_id].tolist()
+    print("number_hotel :",number_hotel)
+    list_hotel_sim = cosine_sim[:,number_hotel[0]]
+    scores_series = pd.Series(list_hotel_sim).sort_values(ascending=False)
+    scores_series_fi=scores_series.head(10).keys()  
+    final= hotels['name'].iloc[scores_series_fi]
+    
+    return final
 
 if __name__ == "__main__":
+    
     
     hotels, reviews = create_clean_df()
     hotels_id_list = reviews.index.drop_duplicates(keep = 'first')
@@ -138,8 +142,37 @@ if __name__ == "__main__":
     df_tfidfvect = tfidf_on_reviews(df)
     cosine_sim = linear_kernel(df_tfidfvect, df_tfidfvect)
     
-    reviews = pd.read_csv('reviews.csv', index_col = 'u_id')
-    df_users = recommandation(reviews)
+    reviews = pd.read_csv('reviews.csv')
+    reviews["rate"] = reviews["rate"].astype(str).apply(lambda x: x.replace(',','.'))
+    reviews["rate"] = reviews["rate"].astype(float)
+    df_users = get_df_with_best_reviews(reviews)
+
+
+    # On fait la recommandation pour chacun des users :
+    # Bug : Un des users à un hotels qui n'existe pas dans df
+    for hotel_user in df_users["all_h_id"]:   
+        print(type(hotel_user))
+        if hotel_user.size == 0 :
+            liste_reco = None
+        else :
+            print(hotel_user)
+            liste_reco = get_recommandation(df, cosine_sim, hotel_user[0])
+            print(liste_reco)
+    #h_id = 187147228694
+    #regarder avec df
+            
+    n_input = 187147498038
+    df[(df == n_input).any(1)].stack()[lambda x: x != n_input].unique()
+    
+    
+
+    
+
+    
+    
+    
+    
+    
     
     
    
