@@ -107,7 +107,9 @@ def tfidf_on_reviews(df):
 def get_df_with_best_reviews(reviews):
     h_id_list = []
     users = []
+    
     users_id_list = reviews['u_id']
+    users_id_list = list(dict.fromkeys(users_id_list))  #delete duplicate u_id
         
     for u_id in users_id_list:
 
@@ -125,13 +127,42 @@ def get_recommandation(df, cosine_sim, h_id):
     
    # list_hotel_id = df['h_id']
     number_hotel = df.index[df['h_id'] == h_id].tolist()
-    print("number_hotel :",number_hotel)
-    list_hotel_sim = cosine_sim[:,number_hotel[0]]
-    scores_series = pd.Series(list_hotel_sim).sort_values(ascending=False)
-    scores_series_fi=scores_series.head(10).keys()  
-    final= hotels['name'].iloc[scores_series_fi]
-    
-    return final
+    # Dans le cas où l'hotel n'existe pas dans df (cas rencontré)
+    if not number_hotel : 
+        print ("pas de recommandation")
+    else :
+        print("#"*20)
+        print ('number_hotel :', number_hotel)
+        print("number_hotel :",number_hotel)
+        list_hotel_sim = cosine_sim[:,number_hotel[0]]
+        scores_series = pd.Series(list_hotel_sim).sort_values(ascending=False)
+        scores_series_fi=scores_series.head(10).keys()  
+        final= hotels['name'].iloc[scores_series_fi]
+        
+        return final
+
+def get_df_recommandation_for_each_user(df_users, df, cosine_sim):
+
+    recommandation_all_users = []
+    liste_users = []
+    # On fait la recommandation pour chacun des users :
+    for hotel_user,u_id in zip(df_users["all_h_id"],df_users["u_id"]):   
+        print(type(hotel_user))
+        if hotel_user.size == 0 :
+            liste_reco = None
+            recommandation_all_users.append(None)
+            liste_users.append(u_id)
+        else :
+            print(hotel_user)
+            liste_reco = get_recommandation(df, cosine_sim, hotel_user[0])
+            recommandation_all_users.append(liste_reco)
+            liste_users.append(u_id)        
+            print(liste_reco)
+            
+    df_recommandations = pd.DataFrame({'u_id':liste_users,'recommandations': recommandation_all_users})  
+    return df_recommandations
+
+
 
 if __name__ == "__main__":
     
@@ -146,23 +177,12 @@ if __name__ == "__main__":
     reviews["rate"] = reviews["rate"].astype(str).apply(lambda x: x.replace(',','.'))
     reviews["rate"] = reviews["rate"].astype(float)
     df_users = get_df_with_best_reviews(reviews)
+           
+    df_recommandations = get_df_recommandation_for_each_user(df_users, df, cosine_sim)
+    
+    #Recommandation user = 1940342934814397417
 
-
-    # On fait la recommandation pour chacun des users :
-    # Bug : Un des users à un hotels qui n'existe pas dans df
-    for hotel_user in df_users["all_h_id"]:   
-        print(type(hotel_user))
-        if hotel_user.size == 0 :
-            liste_reco = None
-        else :
-            print(hotel_user)
-            liste_reco = get_recommandation(df, cosine_sim, hotel_user[0])
-            print(liste_reco)
-    #h_id = 187147228694
-    #regarder avec df
-            
-    n_input = 187147498038
-    df[(df == n_input).any(1)].stack()[lambda x: x != n_input].unique()
+    print(df_recommandations.loc[df_recommandations['u_id'] == 1940342934814397417])
     
     
 
