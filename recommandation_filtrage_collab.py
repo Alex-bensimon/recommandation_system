@@ -26,6 +26,8 @@ df = reviews.drop('title', 1)
 df = df.drop('name', 1)
 df = df.drop('Unnamed: 0', 1)
 
+df = df.fillna(0)
+
 # Define the format
 reader = Reader()
 data = Dataset.load_from_df(df[['u_id', 'h_id', 'rate']], reader)
@@ -45,7 +47,6 @@ predictions = algo.test(testset)
 erreur = accuracy.rmse(predictions)
 #erreur1=accuracy.rmse(predictions1)
 
-#%%
 def get_all_predictions(prediction,n):
  
     # First map the predictions to each user.
@@ -71,14 +72,16 @@ user_id= 3227041573719229893
 results_pred = tmp_transpose.loc[user_id]
 
 #format de results_pred (moviedid, rating), mais on va extraire movieID
-recommended_movie_ids=[]
+recommended_hotel_ids=[]
 for x in range(0, n):
-    recommended_movie_ids.append(results_pred[x][0])
+    recommended_hotel_ids.append(results_pred[x][0])
   
-movies = pd.read_csv('reviews.csv')
-movies.head()
-recommended_movies = movies[movies['h_id'].isin(recommended_movie_ids)]
+hotels = pd.read_csv('hotels.csv')
+hotels = hotels.drop('Unnamed: 0', 1)
 
+hotels.head()
+recommended_hotels = hotels[hotels['h_id'].isin(recommended_hotel_ids)]
 
+print(recommended_hotels)
  
 
