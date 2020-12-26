@@ -123,7 +123,7 @@ def get_df_with_best_reviews(reviews):
     
 
 
-def get_recommandation(df, cosine_sim, h_id):
+def get_recommandation_list(df, cosine_sim, h_id, hotels):
     
    # list_hotel_id = df['h_id']
     number_hotel = df.index[df['h_id'] == h_id].tolist()
@@ -141,7 +141,7 @@ def get_recommandation(df, cosine_sim, h_id):
         
         return final
 
-def get_df_recommandation_for_each_user(df_users, df, cosine_sim):
+def get_df_recommandation_for_each_user(df_users, df, cosine_sim, hotels):
 
     recommandation_all_users = []
     liste_users = []
@@ -154,7 +154,7 @@ def get_df_recommandation_for_each_user(df_users, df, cosine_sim):
             liste_users.append(u_id)
         else :
             print(hotel_user)
-            liste_reco = get_recommandation(df, cosine_sim, hotel_user[0])
+            liste_reco = get_recommandation_list(df, cosine_sim, hotel_user[0], hotels)
             recommandation_all_users.append(liste_reco)
             liste_users.append(u_id)        
             print(liste_reco)
@@ -162,10 +162,8 @@ def get_df_recommandation_for_each_user(df_users, df, cosine_sim):
     df_recommandations = pd.DataFrame({'u_id':liste_users,'recommandations': recommandation_all_users})  
     return df_recommandations
 
-
-
-if __name__ == "__main__":
     
+def content_based_recommandation():
     
     hotels, reviews = create_clean_df()
     hotels_id_list = reviews.index.drop_duplicates(keep = 'first')
@@ -178,11 +176,17 @@ if __name__ == "__main__":
     reviews["rate"] = reviews["rate"].astype(float)
     df_users = get_df_with_best_reviews(reviews)
            
-    df_recommandations = get_df_recommandation_for_each_user(df_users, df, cosine_sim)
+    df_recommandations = get_df_recommandation_for_each_user(df_users, df, cosine_sim, hotels)
     
-    #Recommandation user = 1940342934814397417
+    return df_recommandations
 
-    print(df_recommandations.loc[df_recommandations['u_id'] == 1940342934814397417])
+
+
+if __name__ == "__main__":
+    
+    df_recommandations = content_based_recommandation()   
+    #Recommandation user = 1940342934814397417
+    reco = df_recommandations.loc[df_recommandations['u_id'] == 1940342934814397417].recommandations
     
     
 
