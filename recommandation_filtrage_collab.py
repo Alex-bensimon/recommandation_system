@@ -81,7 +81,9 @@ hotels = hotels.drop('Unnamed: 0', 1)
 
 hotels.head()
 recommended_hotels = hotels[hotels['h_id'].isin(recommended_hotel_ids)]
+recommended_hotels.drop_duplicates(subset ="h_id",keep = 'first', inplace=True)
 
 print(recommended_hotels)
+
  
 
