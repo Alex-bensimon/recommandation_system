@@ -114,7 +114,6 @@ def get_df_with_best_reviews(reviews):
     for u_id in users_id_list:
 
         all_h_id = reviews.loc[(reviews['u_id'] == u_id) & (reviews['rate'] >= 4)].h_id.values
-        print(type(all_h_id))
         h_id_list.append(all_h_id)
         users.append(u_id)
             
@@ -131,9 +130,6 @@ def get_recommandation_list(df, cosine_sim, h_id, hotels):
     if not number_hotel : 
         print ("pas de recommandation")
     else :
-        print("#"*20)
-        print ('number_hotel :', number_hotel)
-        print("number_hotel :",number_hotel)
         list_hotel_sim = cosine_sim[:,number_hotel[0]]
         scores_series = pd.Series(list_hotel_sim).sort_values(ascending=False)
         scores_series_fi=scores_series.head(10).keys()  
@@ -141,13 +137,15 @@ def get_recommandation_list(df, cosine_sim, h_id, hotels):
         
         return final
 
+
 def get_df_recommandation_for_each_user(df_users, df, cosine_sim, hotels):
 
     recommandation_all_users = []
     liste_users = []
     # On fait la recommandation pour chacun des users :
     for hotel_user,u_id in zip(df_users["all_h_id"],df_users["u_id"]):   
-        print(type(hotel_user))
+        print("#"*20)
+        print("user id : ",u_id)
         if hotel_user.size == 0 :
             liste_reco = None
             recommandation_all_users.append(None)
@@ -178,16 +176,17 @@ def content_based_recommandation():
            
     df_recommandations = get_df_recommandation_for_each_user(df_users, df, cosine_sim, hotels)
     
-    return df_recommandations
+    #On return ces dataframes pour plus de compréhension 
+    return df_recommandations,df_users,df,df_tfidfvect,cosine_sim
 
 
 
 if __name__ == "__main__":
     
-    df_recommandations = content_based_recommandation()   
+    
+    df_recommandations,df_users,df,df_tfidfvect,cosine_sim = content_based_recommandation()   
     #Recommandation user = 1940342934814397417
     reco = df_recommandations.loc[df_recommandations['u_id'] == 1940342934814397417].recommandations
-    
     
 
     

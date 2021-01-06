@@ -78,6 +78,7 @@ def get_all_predictions(prediction,n):
         similar_n[uid]=user_ratings[:n]
     return similar_n
 
+
 def get_recommandations_for_a_user(predictions,nb_predictions=4,user_id= 3227041573719229893):
     
     pred_user = get_all_predictions(predictions,nb_predictions)

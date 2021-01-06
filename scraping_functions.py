@@ -285,26 +285,5 @@ def test_hotel_or_restau(user_review):
 
 
 
-if __name__ == "__main__":
-    
-    
-    for i in range(2):
-        home_soup = homepage_request(1,i=0)
-                
-        if home_soup.find_all('a',  class_='property_title prominent') != None:
-            for a in home_soup.find_all('a',  class_='property_title prominent'):
-                reviews = hotel_scraping(a)
-                for review in reviews:
-                    reviews_scraping(review)
-                    result = test_nb_user_reviews(review)
-                    
-                    if result == True: 
-                        user_reviews = get_user_link(review)
-                        for user_review in user_reviews:
-                            test,href = test_hotel_or_restau(user_review)
-                            if test == "Hotel":
-                                reviews_attributs,new_hotel_soup = reviews_scraping(user_review,href)
-                                hotel_scraping(new_hotel_soup)
-    
 
 
