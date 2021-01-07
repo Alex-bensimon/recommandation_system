@@ -128,7 +128,7 @@ def get_recommandation_list(df, cosine_sim, h_id, hotels):
     number_hotel = df.index[df['h_id'] == h_id].tolist()
     # Dans le cas où l'hotel n'existe pas dans df (cas rencontré)
     if not number_hotel : 
-        print ("pas de recommandation")
+        pass
     else :
         list_hotel_sim = cosine_sim[:,number_hotel[0]]
         scores_series = pd.Series(list_hotel_sim).sort_values(ascending=False)
@@ -144,18 +144,18 @@ def get_df_recommandation_for_each_user(df_users, df, cosine_sim, hotels):
     liste_users = []
     # On fait la recommandation pour chacun des users :
     for hotel_user,u_id in zip(df_users["all_h_id"],df_users["u_id"]):   
-        print("#"*20)
-        print("user id : ",u_id)
+        #print("#"*20)
+        #print("user id : ",u_id)
         if hotel_user.size == 0 :
             liste_reco = None
             recommandation_all_users.append(None)
             liste_users.append(u_id)
         else :
-            print(hotel_user)
+            #print(hotel_user)
             liste_reco = get_recommandation_list(df, cosine_sim, hotel_user[0], hotels)
             recommandation_all_users.append(liste_reco)
             liste_users.append(u_id)        
-            print(liste_reco)
+            #print(liste_reco)
             
     df_recommandations = pd.DataFrame({'u_id':liste_users,'recommandations': recommandation_all_users})  
     return df_recommandations

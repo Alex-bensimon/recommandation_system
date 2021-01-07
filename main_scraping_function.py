@@ -19,7 +19,7 @@ def main_scraping_function(nb_page=1):
     for i in range(nb_page):
         home_soup = scrap.homepage_request(page,i=0)
                 
-        if home_soup.find_all('a',  class_='property_title prominent') != None:
+        if home_soup.find_all('a',  class_='property_title prominent ') != None:
             for hotel_url in home_soup.find_all('a',  class_='property_title prominent'):
                 #print("\n \n hotel_url : ", hotel_url)
                 hotels_attributs,reviews,h_id = scrap.hotel_scraping(hotels_attributs,hotel_url)
