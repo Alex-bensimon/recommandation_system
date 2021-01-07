@@ -51,13 +51,13 @@ def define_format_and_train_model(df,model= "SVD"):
         erreur = accuracy.rmse(predictions)
     
     elif model == "MNF":
-        algo1=NMF()
+        algo=NMF()
         trainset = data.build_full_trainset()   #Build on entire data set
         algo.fit(trainset)
         
         testset = trainset.build_anti_testset()      
         #Predicting the ratings for testset
-        predictions=algo1.test(testset)
+        predictions=algo.test(testset)
         erreur=accuracy.rmse(predictions)
    
     #results = cross_validate(algo, data, measures=['RMSE'], cv=3, verbose=True)
